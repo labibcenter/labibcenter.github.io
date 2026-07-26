@@ -284,7 +284,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     $('#modalDrive').attr('href', drive);
     var waMsg = encodeURIComponent('Halo Labib Center, saya tertarik dengan template: ' + title);
-    $('#modalWA').attr('href', 'https://wa.me/TODO_WA_NUMBER?text=' + waMsg);
+    $('#modalWA').attr('href', 'https://wa.me/6281323432816?text=' + waMsg);
 
     bootstrap.Modal.getOrCreateInstance(document.getElementById('previewModal')).show();
   });
