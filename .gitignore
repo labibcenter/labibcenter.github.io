@@ -1,0 +1,25 @@
+# Excel lock files (created when file is open in Excel)
+~$*.xlsx
+~$*.xls
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Playwright MCP session artifacts (local testing only)
+.playwright-mcp/
+
+# Editor / IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Python / build cache
+__pycache__/
+*.pyc
+
+# Local secrets
+.env
+.env.local

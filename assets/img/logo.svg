@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120" role="img" aria-label="Logo Labib Center Design and Printing">
+  <defs>
+    <linearGradient id="lc-loop" x1="18%" y1="12%" x2="82%" y2="88%">
+      <stop offset="0%" stop-color="#EC4899"/>
+      <stop offset="16%" stop-color="#FB923C"/>
+      <stop offset="34%" stop-color="#FACC15"/>
+      <stop offset="58%" stop-color="#22D3EE"/>
+      <stop offset="82%" stop-color="#2E3ED6"/>
+      <stop offset="100%" stop-color="#1A2668"/>
+    </linearGradient>
+  </defs>
+  <circle cx="60" cy="60" r="46" fill="none"
+          stroke="url(#lc-loop)" stroke-width="16" stroke-linecap="round"
+          stroke-dasharray="245 44"
+          stroke-dashoffset="-8"
+          transform="rotate(-45 60 60)"/>
+</svg>
