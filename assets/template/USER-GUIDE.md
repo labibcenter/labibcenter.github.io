@@ -205,7 +205,7 @@ git push origin main
 
 Setelah push, GitHub Pages otomatis rebuild dalam 30-90 detik. Buka:
 ```
-https://qkohst.github.io/labibcenter/
+https://labibcenter.github.io/
 ```
 untuk cek hasilnya.
 
@@ -252,7 +252,7 @@ untuk cek hasilnya.
 - [ ] `index.html` sudah di-regenerate (bila ada item baru/hilang)
 - [ ] Git commit dengan pesan yang jelas
 - [ ] `git push origin main`
-- [ ] Cek https://qkohst.github.io/labibcenter/ (hard refresh)
+- [ ] Cek https://labibcenter.github.io/ (hard refresh)
 
 ---
 
