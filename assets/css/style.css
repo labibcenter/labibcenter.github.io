@@ -1238,7 +1238,21 @@ footer.site-footer { background: var(--brand-navy); color: rgba(255,255,255,.75)
 footer.site-footer a { color: var(--brand-cyan); }
 footer.site-footer a:hover { color: #fff; }
 footer.site-footer h5 { color: #fff; font-size: 1rem; font-weight: 600; margin-bottom: .8rem; }
-footer .footer-bottom { border-top: 1px solid rgba(255,255,255,.12); padding-top: 1rem; margin-top: 1.5rem; text-align: center; font-size: .85rem; }
+footer .footer-bottom {
+  border-top: 1px solid rgba(255,255,255,.12);
+  padding-top: 1rem; margin-top: 1.5rem; font-size: .85rem;
+  display: flex; align-items: center; justify-content: space-between;
+  flex-wrap: wrap; gap: .5rem 1.5rem;
+}
+footer .footer-credit { color: rgba(255,255,255,.6); }
+footer .footer-credit a {
+  color: var(--brand-cyan); font-weight: 600;
+  transition: color .18s ease;
+}
+footer .footer-credit a:hover { color: #fff; text-decoration: underline; }
+@media (max-width: 575px) {
+  footer .footer-bottom { justify-content: center; text-align: center; }
+}
 
 .social-row { display: flex; gap: .5rem; margin-top: 1rem; flex-wrap: wrap; }
 .social-row a {
