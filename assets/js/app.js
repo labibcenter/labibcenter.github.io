@@ -297,16 +297,6 @@ document.addEventListener('DOMContentLoaded', function () {
     var waMsg = encodeURIComponent(waTextLines.join('\n'));
     $('#modalWA').attr('href', 'https://wa.me/6281323432816?text=' + waMsg);
 
-    // Reset "Alur Pemesanan" collapse tiap kali modal buka
-    var alur = document.getElementById('modalAlurCollapse');
-    if (alur) {
-      var inst = bootstrap.Collapse.getInstance(alur);
-      if (inst) inst.hide();
-      alur.classList.remove('show');
-      var toggle = document.getElementById('modalAlurToggle');
-      if (toggle) toggle.setAttribute('aria-expanded', 'false');
-    }
-
     bootstrap.Modal.getOrCreateInstance(document.getElementById('previewModal')).show();
   });
 

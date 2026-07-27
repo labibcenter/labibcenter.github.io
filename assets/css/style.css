@@ -710,52 +710,69 @@ a:hover { color: var(--brand-cyan); }
 .modal-actions .btn,
 .modal-actions .btn-wa-green { width: 100%; padding: .75rem 1.1rem; font-size: .95rem; }
 
-/* Alur Pemesanan toggle — minimalis (text button, no fill) */
+/* Alur Pemesanan trigger — text-link minimalis (buka modal) */
 .btn-alur-toggle {
   background: transparent;
-  border: 1px solid #e2e8f0;
-  color: var(--brand-navy);
+  border: 0;
+  color: var(--brand-gray);
   font-weight: 500;
-  font-size: .88rem;
-  border-radius: .6rem;
-  padding: .55rem 1rem;
-  display: inline-flex; align-items: center; gap: .5rem;
+  font-size: .84rem;
+  padding: .35rem 0;
+  display: inline-flex; align-items: center; justify-content: center; gap: .4rem;
   cursor: pointer;
-  transition: background .2s ease, border-color .2s ease, color .2s ease;
+  transition: color .18s ease;
   width: 100%;
+  text-decoration: none;
 }
-.btn-alur-toggle:hover {
-  background: #f8fafc;
-  border-color: #cbd5e1;
-  color: var(--brand-navy);
+.btn-alur-toggle:hover { color: var(--brand-navy); }
+.btn-alur-toggle:hover span {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-color: var(--brand-cyan);
+  text-decoration-thickness: 1.5px;
 }
-.btn-alur-toggle > svg:first-of-type {
-  width: 15px; height: 15px; color: var(--brand-blue); flex-shrink: 0;
+.btn-alur-toggle svg {
+  width: 14px; height: 14px; flex-shrink: 0;
+  opacity: .85;
+  transition: transform .25s ease;
 }
-.btn-alur-toggle .chev {
-  width: 13px; height: 13px; margin-left: auto; color: #94a3b8;
-  transition: transform .28s ease;
-}
-.btn-alur-toggle[aria-expanded="true"] .chev { transform: rotate(180deg); color: var(--brand-navy); }
-.btn-alur-toggle[aria-expanded="true"] {
-  background: #f8fafc; border-color: #cbd5e1;
-}
+.btn-alur-toggle:hover svg { transform: scale(1.08); opacity: 1; }
 
-/* Alur Pemesanan panel (accordion content) */
-.alur-pemesanan {
-  padding: 1.1rem 1.2rem;
-  background: #f8fafc;
-  border: 1px solid #eef1f6;
-  border-radius: .75rem;
-  margin-top: .5rem;
+/* Alur Pemesanan Modal */
+#alurPemesananModal .modal-dialog { max-width: 520px; }
+#alurPemesananModal .alur-modal-content {
+  border: 0; border-radius: 1.1rem; overflow: hidden;
+  box-shadow: 0 32px 80px -20px rgba(15,21,51,.35);
+  position: relative;
 }
-.alur-pemesanan-title {
-  font-size: .68rem; text-transform: uppercase; letter-spacing: .14em;
-  color: var(--brand-gray); font-weight: 700;
-  margin: 0 0 .85rem;
-  display: flex; align-items: center; gap: .4rem;
+#alurPemesananModal .alur-modal-content::before {
+  content: ""; display: block; height: 4px;
+  background: var(--brand-gradient);
 }
-.alur-pemesanan-title svg { width: 13px; height: 13px; color: var(--brand-gray); }
+#alurPemesananModal .alur-modal-header {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 1.2rem 1.5rem 0;
+}
+#alurPemesananModal .alur-modal-header h5 {
+  margin: 0; color: var(--brand-navy); font-weight: 700; font-size: 1.1rem;
+}
+#alurPemesananModal .modal-close-btn {
+  position: static;
+  width: 32px; height: 32px; border-radius: 50%;
+  background: #f1f5f9; border: 0;
+  color: #64748b; cursor: pointer;
+  display: inline-flex; align-items: center; justify-content: center;
+  transition: all .22s ease;
+}
+#alurPemesananModal .modal-close-btn:hover {
+  background: var(--brand-navy); color: #fff; transform: rotate(90deg);
+}
+#alurPemesananModal .modal-close-btn svg { width: 16px; height: 16px; }
+#alurPemesananModal .alur-modal-body { padding: 1rem 1.5rem 1.6rem; }
+#alurPemesananModal .alur-modal-subtitle {
+  color: #64748b; font-size: .88rem; line-height: 1.55;
+  margin: 0 0 1.2rem;
+}
 
 .alur-list {
   list-style: none; padding: 0; margin: 0;
