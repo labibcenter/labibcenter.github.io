@@ -227,11 +227,11 @@ document.addEventListener('DOMContentLoaded', function () {
 
   $items.on('click', function () {
     var $c = $(this);
+    var id = ($c.attr('data-id') || '').toString();
     var title = $c.data('title');
     var desc = $c.data('description');
     var format = ($c.data('format') || '').toString();
     var category = $c.data('category');
-    var drive = $c.data('drive');
     var price = parseInt($c.attr('data-price'), 10);
     var originalPrice = parseInt($c.attr('data-original-price'), 10);
     $('#modalPrice').text(formatRpNumber(price));
@@ -282,9 +282,30 @@ document.addEventListener('DOMContentLoaded', function () {
     $mf.removeClass('cdr psd').addClass(format.toLowerCase());
     $('#modalFormatText').text(format);
 
-    $('#modalDrive').attr('href', drive);
-    var waMsg = encodeURIComponent('Halo Labib Center, saya tertarik dengan template: ' + title);
+    // Susun pesan WA profesional: kode + judul + kategori/format + harga
+    var priceLine = !isNaN(price) ? formatRp(price) : '-';
+    var waTextLines = [
+      'Halo Labib Center, saya ingin memesan template berikut:',
+      '',
+      'Kode      : ' + id,
+      'Judul     : ' + title,
+      'Kategori  : ' + category + ' (' + format + ')',
+      'Harga     : ' + priceLine,
+      '',
+      'Mohon informasi lebih lanjut untuk proses pemesanannya. Terima kasih.'
+    ];
+    var waMsg = encodeURIComponent(waTextLines.join('\n'));
     $('#modalWA').attr('href', 'https://wa.me/6281323432816?text=' + waMsg);
+
+    // Reset "Alur Pemesanan" collapse tiap kali modal buka
+    var alur = document.getElementById('modalAlurCollapse');
+    if (alur) {
+      var inst = bootstrap.Collapse.getInstance(alur);
+      if (inst) inst.hide();
+      alur.classList.remove('show');
+      var toggle = document.getElementById('modalAlurToggle');
+      if (toggle) toggle.setAttribute('aria-expanded', 'false');
+    }
 
     bootstrap.Modal.getOrCreateInstance(document.getElementById('previewModal')).show();
   });
