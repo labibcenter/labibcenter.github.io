@@ -521,5 +521,27 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 
   $('#year').text(new Date().getFullYear());
+
+  // ============================================================
+  // Alur Pemesanan trigger — buka via API supaya preview katalog
+  // TIDAK ikut ditutup. Bootstrap default: klik button dengan
+  // data-bs-toggle="modal" DI DALAM modal aktif akan auto-close
+  // modal parent sebelum buka target. Kita hindari itu dengan
+  // panggil Modal.show() langsung.
+  // ============================================================
+  $('#btnOpenAlur').on('click', function (e) {
+    e.preventDefault();
+    var alurEl = document.getElementById('alurPemesananModal');
+    bootstrap.Modal.getOrCreateInstance(alurEl).show();
+  });
+
+  // Ketika Alur ditutup TAPI preview katalog masih show,
+  // Bootstrap me-remove class 'modal-open' dari body — akibatnya
+  // scroll body terbuka lagi. Kembalikan class-nya secara manual.
+  document.addEventListener('hidden.bs.modal', function () {
+    if (document.querySelector('.modal.show')) {
+      document.body.classList.add('modal-open');
+    }
+  });
   });
 });

@@ -725,20 +725,17 @@ a:hover { color: var(--brand-cyan); }
   text-decoration: none;
 }
 .btn-alur-toggle:hover { color: var(--brand-navy); }
-.btn-alur-toggle:hover span {
-  text-decoration: underline;
-  text-underline-offset: 3px;
-  text-decoration-color: var(--brand-cyan);
-  text-decoration-thickness: 1.5px;
-}
 .btn-alur-toggle svg {
   width: 14px; height: 14px; flex-shrink: 0;
   opacity: .85;
-  transition: transform .25s ease;
+  transition: transform .25s ease, opacity .18s ease;
 }
 .btn-alur-toggle:hover svg { transform: scale(1.08); opacity: 1; }
 
-/* Alur Pemesanan Modal */
+/* Alur Pemesanan Modal — stacked di atas preview katalog TANPA backdrop
+   (data-bs-backdrop="false" di HTML) supaya preview katalog tetap
+   terlihat cerah di belakang. Z-index dinaikkan agar di atas preview. */
+#alurPemesananModal { z-index: 1075; }
 #alurPemesananModal .modal-dialog { max-width: 520px; }
 #alurPemesananModal .alur-modal-content {
   border: 0; border-radius: 1.1rem; overflow: hidden;

@@ -37,11 +37,11 @@
 
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/style.css?v=20260727b">
 
   <!-- App JS di head (bukan defer): imgFallback vanilla langsung tersedia untuk <img onerror>.
        Kode jQuery di dalamnya menunggu DOMContentLoaded — jadi aman meski jQuery/Bootstrap belum load. -->
-  <script src="assets/js/app.js"></script>
+  <script src="assets/js/app.js?v=20260727b"></script>
 
   <script type="application/ld+json">
   {
@@ -1002,7 +1002,7 @@
               </div>
 
               <div class="modal-actions">
-                <button type="button" class="btn-alur-toggle" data-bs-toggle="modal" data-bs-target="#alurPemesananModal">
+                <button type="button" class="btn-alur-toggle" id="btnOpenAlur">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
                   <span>Lihat alur pemesanan</span>
                 </button>
@@ -1053,8 +1053,8 @@
     </div>
   </div>
 
-  <!-- ALUR PEMESANAN MODAL -->
-  <div class="modal fade" id="alurPemesananModal" tabindex="-1" aria-labelledby="alurPemesananTitle" aria-hidden="true">
+  <!-- ALUR PEMESANAN MODAL — stacked di atas preview katalog tanpa backdrop -->
+  <div class="modal fade" id="alurPemesananModal" tabindex="-1" aria-labelledby="alurPemesananTitle" aria-hidden="true" data-bs-backdrop="false">
     <div class="modal-dialog modal-dialog-centered">
       <div class="modal-content alur-modal-content">
         <div class="alur-modal-header">
